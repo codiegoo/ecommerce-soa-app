@@ -30,9 +30,12 @@ interface Product {
   proveedor?: string;
 }
 
-export default function ProductDetailPage() {
-  const params = useParams();
-  const id = params.id as string;
+export default async function ProductDetailPage({
+  params,
+}:{
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
 
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
