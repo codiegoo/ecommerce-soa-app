@@ -4,7 +4,6 @@ import Stripe from "stripe";
 import { stripe } from "@/src/lib/stripe";
 import { sql } from "@/src/lib/db";
 
-export const runtime = "nodejs";
 
 export async function POST(request: NextRequest) {
   const signature = request.headers.get("stripe-signature");
