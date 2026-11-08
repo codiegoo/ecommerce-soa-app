@@ -6,11 +6,18 @@ import {
   serverError,
 } from "@/src/lib/responses";
 
+
+
 export async function GET() {
   try {
     const session = await getSession();
 
-    if (!session) return unauthorized();
+    if (!session) {
+      return NextResponse.json(
+        { error: "No autorizado" },
+        { status: 401 }
+      );
+    }
 
     const clientes = await sql`
       SELECT id
@@ -78,6 +85,7 @@ export async function GET() {
     );
 
     return NextResponse.json({
+      userId: session.userId,
       carrito,
       detalles,
       total,

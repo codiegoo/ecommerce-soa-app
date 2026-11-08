@@ -6,6 +6,8 @@ import {
   serverError,
 } from "@/src/lib/responses";
 
+
+
 export async function GET() {
   try {
     const session = await getSession();

@@ -1,3 +1,4 @@
+
 import { SignJWT, jwtVerify } from "jose";
 import { cookies } from "next/headers";
 
@@ -8,7 +9,6 @@ if (!secret) {
 }
 
 const SECRET_KEY = new TextEncoder().encode(secret);
-
 const COOKIE_NAME = "session";
 
 export async function createSession(userId: number) {

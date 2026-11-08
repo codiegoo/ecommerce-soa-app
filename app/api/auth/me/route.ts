@@ -3,6 +3,8 @@ import { sql } from "@/src/lib/db";
 import { getSession } from "@/src/lib/auth";
 import { unauthorized, serverError } from "@/src/lib/responses";
 
+
+
 export async function GET() {
   try {
     const session = await getSession();
