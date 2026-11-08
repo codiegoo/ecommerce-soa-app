@@ -1,4 +1,3 @@
-
 import type { Metadata } from "next";
 import SwaggerDocs from "./SwaggerDocs";
 
@@ -9,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function DocPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main>
       <SwaggerDocs />
     </main>
   );
